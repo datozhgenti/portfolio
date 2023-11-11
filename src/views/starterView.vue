@@ -6,21 +6,41 @@
         placeholder="Enter Name, Please"
         maxlength="13"
         autofocus
-        :onkeydown="onInput"
+        @input="onInput"
+        v-model="input"
       />
       <img
-        src="@/assets/arrow-icons/arrow-right.svg"
+        src="@/assets/icons/arrow-right.svg"
         alt="go to portfolio button"
         class="block pointer"
+        @click="goToMainView"
       />
     </div>
   </main>
 </template>
 
 <script setup>
+import { ref } from "vue";
+import { useStore } from "@/store/index.js";
+
+const store = useStore();
+
+const input = ref("");
+
 function onInput(e) {
+  store.userName = input.value;
   return /[a-z]/i.test(e.key);
 }
+
+function goToMainView() {
+  store.starterViewOn = false;
+}
+
+window.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    goToMainView();
+  }
+});
 </script>
 
 <style scoped>
