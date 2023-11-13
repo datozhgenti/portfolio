@@ -1,5 +1,8 @@
 <template>
-  <header class="flex space-between align-center">
+  <header
+    class="flex space-between align-center"
+    :class="{ fixed: fixedHeader }"
+  >
     <a href="#" class="block">
       <h2 class="font-bold">David</h2>
     </a>
@@ -27,9 +30,10 @@
 <script setup>
 /* eslint-disable */
 import pageNav from "@/views/mainViewComponents/pageNav.vue";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 let pageNavOn = ref(false);
+let fixedHeader = ref(false);
 
 const colorsBtns = ref([
   {
@@ -45,6 +49,12 @@ const colorsBtns = ref([
     shadowClass: "",
   },
 ]);
+
+onMounted(() => {
+  setTimeout(() => {
+    fixedHeader.value = true;
+  }, 1000);
+});
 
 function openPageNav() {
   pageNavOn.value = true;
@@ -74,6 +84,9 @@ function changeColorMode(bgColor = "#171717", textColor = "#ffffff", index) {
 header {
   padding: 1.75rem 5.4375rem 1.75rem 5.4375rem;
   background: #171717;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 h2 {
@@ -101,7 +114,7 @@ img {
 .color-mode-btn {
   width: 2.25rem;
   height: 2.25rem;
-  border-radius: 10px;
+  border-radius: 0.625rem;
 }
 
 header > div {

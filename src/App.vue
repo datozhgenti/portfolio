@@ -137,4 +137,16 @@ ul {
 .text-align-center {
   text-align: center;
 }
+
+/* button styles */
+
+.btn-padding {
+  padding: 0.75rem 1.6875rem;
+}
+
+/* border radiuses */
+
+.border-radius-50 {
+  border-radius: 50%;
+}
 </style>

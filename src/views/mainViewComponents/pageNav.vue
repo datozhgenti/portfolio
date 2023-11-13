@@ -31,8 +31,9 @@ export default {};
 nav {
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   inset: 0;
+  overflow: auto;
 }
 
 a {
@@ -40,11 +41,12 @@ a {
   margin-bottom: 1.25rem;
   display: block;
   color: #ffffff;
+  padding: 0;
 }
 
 img {
-  top: 15px;
-  right: 15px;
+  top: 0.9375rem;
+  right: 0.9375rem;
   width: 3rem;
   height: 3rem;
 }

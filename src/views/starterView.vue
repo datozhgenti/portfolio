@@ -28,8 +28,11 @@ const store = useStore();
 const input = ref("");
 
 function onInput(e) {
-  store.userName = input.value;
-  return /[a-z]/i.test(e.key);
+  if (/^[A-Za-z]+$/.test(e.target.value)) {
+    store.userName = input.value;
+  } else {
+    store.userName = input.value = input.value.slice(0, -1);
+  }
 }
 
 function goToMainView() {
@@ -52,7 +55,7 @@ input {
   border: none;
   background-color: transparent;
   padding-bottom: 0.625rem;
-  border-bottom: 1px solid #4f4f4f;
+  border-bottom: 0.0625rem solid #4f4f4f;
   font-size: 4rem;
 }
 
@@ -72,13 +75,16 @@ input {
 
 @media (max-width: 48rem) {
   input {
-    font-size: 5vw;
-    padding-bottom: 5px;
+    font-size: 1rem;
   }
 
   img {
-    width: 40px;
-    padding-bottom: 5px;
+    width: 2.5rem;
+  }
+
+  input,
+  img {
+    padding-bottom: 0.3125rem;
   }
 }
 </style>
