@@ -37,6 +37,12 @@ body {
   background: var(--page-background);
 }
 
+/* scroll styles */
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* font families */
 @font-face {
   font-family: DMsans-regular;
@@ -67,6 +73,24 @@ body {
   font-family: "DMsans-bold", "sans-serif";
 }
 
+/* font sizes */
+
+.font-36 {
+  font-size: 2.25rem;
+}
+
+.font-48 {
+  font-size: 3rem;
+}
+
+.font-18 {
+  font-size: 1.125rem;
+}
+
+.font-14 {
+  font-size: 0.875rem;
+}
+
 /* flex styles */
 
 .justify-center {
@@ -81,6 +105,13 @@ body {
   justify-content: space-between;
 }
 
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
 /* displays */
 
 .flex {
@@ -148,5 +179,25 @@ ul {
 
 .border-radius-50 {
   border-radius: 50%;
+}
+
+/* wrappers */
+.projects-and-skills-wrapper {
+  padding-left: 8.8125rem;
+  padding-right: 8.1875rem;
+  row-gap: 1.25rem;
+}
+
+@media (max-width: 39.375rem) {
+  .projects-and-skills-wrapper {
+    padding: 0 1rem 0;
+  }
+}
+
+/* card sizes */
+
+.skill-and-project-card-sizes {
+  flex-basis: 21.8125rem;
+  height: 15.0625rem;
 }
 </style>

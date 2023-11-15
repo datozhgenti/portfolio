@@ -7,24 +7,31 @@
       @click="$emit('closeNav')"
     />
     <ul class="text-align-center">
-      <li>
-        <a href="#" class="font-bold">Home</a>
-      </li>
-      <li>
-        <a href="#about" class="font-bold">About</a>
-      </li>
-      <li>
-        <a href="#skills" class="font-bold">What I Do?</a>
-      </li>
-      <li>
-        <a href="#projects" class="font-bold">My Projects</a>
+      <li v-for="link of navLinks" :key="link">
+        <a
+          :href="link.sectionLink"
+          class="font-bold font-36"
+          @click="$emit('closeNav')"
+          >{{ link.name }}</a
+        >
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      navLinks: [
+        { sectionLink: "#", name: "Home" },
+        { sectionLink: "#about", name: "About" },
+        { sectionLink: "#skills", name: "What I Do?" },
+        { sectionLink: "#projects", name: "My Projects" },
+      ],
+    };
+  },
+};
 </script>
 
 <style scoped>
@@ -34,10 +41,10 @@ nav {
   background: rgba(0, 0, 0, 0.9);
   inset: 0;
   overflow: auto;
+  z-index: 200;
 }
 
 a {
-  font-size: 2.25rem;
   margin-bottom: 1.25rem;
   display: block;
   color: #ffffff;

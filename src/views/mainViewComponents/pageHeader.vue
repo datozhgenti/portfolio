@@ -4,7 +4,7 @@
     :class="{ fixed: fixedHeader }"
   >
     <a href="#" class="block">
-      <h2 class="font-bold">David</h2>
+      <h2 class="font-bold font-36">David</h2>
     </a>
     <div class="flex align-center space-between">
       <img
@@ -87,10 +87,10 @@ header {
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
 }
 
 h2 {
-  font-size: 2.25rem;
   color: #ffffff;
 }
 
@@ -131,7 +131,7 @@ header > div {
   transform: translateX(-100%);
 }
 
-@media (max-width: 26.5625rem) {
+@media (max-width: 48rem) {
   header {
     padding: 1.75rem 1rem 1.75rem;
   }

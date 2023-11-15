@@ -1,7 +1,7 @@
 <template>
   <section class="hero-section flex space-between align-center">
     <div class="left">
-      <h1 class="font-bold">
+      <h1 class="font-bold font-48">
         Hi
         {{
           userName === ""
@@ -9,7 +9,7 @@
             : userName[0].toUpperCase() + userName.slice(1).toLowerCase()
         }},<br />I Am David Zhgenti
       </h1>
-      <p class="font-medium">Frontend Developer</p>
+      <p class="font-medium font-18">Frontend Developer</p>
       <div class="btns flex">
         <greenBtn download></greenBtn>
         <a href="#about" class="font-medium btn-padding" @click="cl"
@@ -47,12 +47,10 @@ section {
 }
 
 h1 {
-  font-size: 3rem;
   line-height: 3.90625rem;
 }
 
 p {
-  font-size: 1.125rem;
   color: #828282;
   margin: 0.5625rem 0 2.1875rem;
 }
@@ -62,7 +60,7 @@ p {
 }
 
 .btns {
-  gap: 10px;
+  gap: 0.625rem;
 }
 
 .image-wrapper {
@@ -75,10 +73,10 @@ img {
   height: 100%;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 83.75rem) {
   section {
     flex-direction: column;
-    padding: 20px;
+    padding: 1.25rem;
     padding-top: 0;
   }
 
@@ -91,14 +89,14 @@ img {
   }
 }
 
-@media (max-width: 26.5625rem) {
+@media (max-width: 45.3125rem) {
   .image-wrapper {
     width: 100%;
     height: 100%;
   }
 }
 
-@media (max-width: 20rem) {
+@media (max-width: 21.5625rem) {
   a {
     font-size: 0.8125rem;
   }
