@@ -1,6 +1,6 @@
 <template>
   <section class="hero-section flex space-between align-center">
-    <div class="left">
+    <div class="left hero-left-animation">
       <h1 class="font-bold font-48">
         Hi
         {{
@@ -12,12 +12,10 @@
       <p class="font-medium font-18">Frontend Developer</p>
       <div class="btns flex">
         <greenBtn download></greenBtn>
-        <a href="#about" class="font-medium btn-padding" @click="cl"
-          >Learn More</a
-        >
+        <a href="#about" class="font-medium btn-padding">Learn More</a>
       </div>
     </div>
-    <div class="right">
+    <div class="right" ref="imgWrapper" :data-aos="aosAnim">
       <div class="image-wrapper">
         <img
           src="@/assets/images/me.jpg"
@@ -32,8 +30,28 @@
 <script setup>
 import greenBtn from "./buttons/greenBtn.vue";
 import { useStore } from "@/store";
+import { onMounted, ref } from "vue";
 
 const userName = useStore().userName;
+
+const imgWrapper = ref(null);
+
+const aosAnim = ref("");
+
+function changeImageAnim() {
+  const media = window.matchMedia("(max-width: 83.75rem)");
+
+  if (media.matches) {
+    aosAnim.value = "fade-left";
+  } else {
+    imgWrapper.value.classList.add("hero-right-animation");
+    aosAnim.value = "";
+  }
+}
+
+onMounted(() => {
+  changeImageAnim();
+});
 </script>
 
 <style scoped>
@@ -71,6 +89,36 @@ p {
 img {
   width: 100%;
   height: 100%;
+}
+
+.hero-left-animation {
+  animation: hero-left-anim 1s 1s forwards ease-in-out;
+}
+
+.hero-right-animation {
+  animation: hero-right-anim 1s 1s forwards ease-in-out;
+}
+
+@keyframes hero-left-anim {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hero-right-anim {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 83.75rem) {

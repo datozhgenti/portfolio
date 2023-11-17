@@ -6,6 +6,7 @@
         class="skill-card skill-and-project-card-sizes"
         v-for="skill of skills"
         :key="skill"
+        data-aos="fade-left"
       >
         <div class="img-wrapper">
           <img :src="skill.imgUrl" alt="skill image" class="block" />
@@ -35,10 +36,6 @@ export default {
 </script>
 
 <style scoped>
-h1 {
-  margin-bottom: 6.25rem;
-}
-
 .skill-card {
   background: #212121;
   padding: 2.125rem 4.375rem 2.25rem 3.125rem;

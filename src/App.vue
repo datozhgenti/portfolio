@@ -9,9 +9,20 @@
 import starterView from "./views/starterView.vue";
 import mainView from "./views/mainView.vue";
 import { useStore } from "@/store/index.js";
+import { onMounted } from "vue";
+import AOS from "aos";
+
+onMounted(() => {
+  AOS.init({
+    startEvent: "scroll",
+    duration: 1000,
+  });
+});
 </script>
 
 <style>
+@import "aos/dist/aos.css";
+
 /* color variables */
 
 :root {
@@ -37,10 +48,16 @@ body {
   background: var(--page-background);
 }
 
+.body,
+html {
+  overflow-x: hidden;
+}
+
 /* scroll styles */
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.5rem;
 }
 
 /* font families */
@@ -112,6 +129,10 @@ html {
 .wrap {
   flex-wrap: wrap;
 }
+
+.column {
+  flex-direction: column;
+}
 /* displays */
 
 .flex {
@@ -150,13 +171,13 @@ a {
   position: fixed;
 }
 
-/* .absolute {
+.absolute {
   position: absolute;
 }
 
 .relative {
   position: relative;
-} */
+}
 /* list styles */
 
 ul {
@@ -186,6 +207,7 @@ ul {
   padding-left: 8.8125rem;
   padding-right: 8.1875rem;
   row-gap: 1.25rem;
+  margin-top: 6.25rem;
 }
 
 @media (max-width: 39.375rem) {
@@ -199,5 +221,11 @@ ul {
 .skill-and-project-card-sizes {
   flex-basis: 21.8125rem;
   height: 15.0625rem;
+}
+
+/* section styles */
+
+section {
+  overflow-x: hidden;
 }
 </style>

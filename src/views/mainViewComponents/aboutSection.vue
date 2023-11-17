@@ -17,6 +17,7 @@
           class="info-card text-align-center"
           v-for="(info, index) of infos"
           :key="info"
+          data-aos="fade-right"
         >
           <a
             :href="info.link"
@@ -94,6 +95,7 @@ article {
 }
 .more-info-wrapper {
   flex-basis: 72.1875rem;
+  gap: 1.875rem;
 }
 
 a:hover .circle-small {
@@ -109,7 +111,6 @@ a:hover .circle-small {
 
 @media (max-width: 46.875rem) {
   .more-info-wrapper {
-    gap: 1.875rem;
     flex-direction: column;
     flex-basis: content;
   }
