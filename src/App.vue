@@ -1,4 +1,5 @@
 <template>
+  <pagePreloaderVue></pagePreloaderVue>
   <transition name="starter">
     <starterView v-if="useStore().starterViewOn"></starterView>
   </transition>
@@ -8,6 +9,7 @@
 <script setup>
 import starterView from "./views/starterView.vue";
 import mainView from "./views/mainView.vue";
+import pagePreloaderVue from "./views/pagePreloader.vue";
 import { useStore } from "@/store/index.js";
 import { onMounted } from "vue";
 import AOS from "aos";

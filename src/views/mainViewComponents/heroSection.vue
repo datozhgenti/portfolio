@@ -15,7 +15,17 @@
         <a href="#about" class="font-medium btn-padding">Learn More</a>
       </div>
     </div>
-    <div class="right" ref="imgWrapper" :data-aos="aosAnim">
+    <div
+      class="right relative"
+      ref="imgWrapper"
+      :data-aos="aosAnim"
+      @animationend="blackCircleRemove"
+      data-aos-id="hero-right"
+    >
+      <div
+        class="black-circle border-radius-50 absolute"
+        ref="blackCircle"
+      ></div>
       <div class="image-wrapper">
         <img
           src="@/assets/images/me.jpg"
@@ -45,12 +55,31 @@ function changeImageAnim() {
     aosAnim.value = "fade-left";
   } else {
     imgWrapper.value.classList.add("hero-right-animation");
-    aosAnim.value = "";
   }
+}
+
+const blackCircle = ref(null);
+
+function blackCircleRemove() {
+  blackCircle.value.classList.add("black-circle-anim");
 }
 
 onMounted(() => {
   changeImageAnim();
+
+  document.addEventListener(
+    "aos:in:hero-right",
+    ({ detail }) => {
+      detail.addEventListener(
+        "transitionend",
+        () => {
+          blackCircleRemove();
+        },
+        { once: true }
+      );
+    },
+    { once: true }
+  );
 });
 </script>
 
@@ -58,6 +87,11 @@ onMounted(() => {
 section {
   padding: 0 6.125rem 2.9375rem 8rem;
   margin-top: 11.6875rem;
+}
+
+.black-circle {
+  background: black;
+  inset: 0;
 }
 
 .left {
@@ -99,6 +133,10 @@ img {
   animation: hero-right-anim 1s 1s forwards ease-in-out;
 }
 
+.black-circle-anim {
+  animation: black-circle-anim 800ms forwards ease-in-out;
+}
+
 @keyframes hero-left-anim {
   from {
     opacity: 0;
@@ -118,6 +156,15 @@ img {
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes black-circle-anim {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
   }
 }
 
