@@ -9,9 +9,9 @@
         data-aos="fade-left"
       >
         <div class="img-wrapper">
-          <img :src="skill.imgUrl" alt="skill image" class="block" />
+          <img :src="skill.imgUrl" :alt="`${skill.name} icon`" class="block" />
         </div>
-        <h3 class="font-bold font-36">{{ skill.name }}</h3>
+        <h2 class="font-bold font-36">{{ skill.name }}</h2>
       </div>
     </div>
   </section>
@@ -48,7 +48,7 @@ img {
   height: 3.5625rem;
 }
 
-h3 {
+h2 {
   margin-top: 1.875rem;
   color: #535353;
 }
@@ -82,7 +82,7 @@ h3 {
 }
 
 @media (max-width: 23.125rem) {
-  h3 {
+  h2 {
     font-size: 1.1875rem;
   }
 

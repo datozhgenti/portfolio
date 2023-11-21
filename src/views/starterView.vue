@@ -8,11 +8,14 @@
         autofocus
         @input="onInput"
         v-model="input"
+        name="input"
+        id="starter-input"
       />
       <img
         src="@/assets/icons/arrow-right.svg"
         alt="go to portfolio button"
         class="block pointer"
+        height="94"
         @click="goToMainView"
       />
     </div>
@@ -55,7 +58,6 @@ input {
   border: none;
   background-color: transparent;
   padding-bottom: 0.625rem;
-  border-bottom: 0.0625rem solid #4f4f4f;
   font-size: 4rem;
 }
 

@@ -29,27 +29,27 @@ import greenBtn from "./buttons/greenBtn.vue";
 
 const projects = ref([
   {
-    imgUrl: require("@/assets/images/restaraunt-website.png"),
+    imgUrl: require("@/assets/images/restaraunt-website.webp"),
     name: "Restaraunt Website",
     link: "https://datozhgenti.github.io/restaraunt-website/",
   },
   {
-    imgUrl: require("@/assets/images/retail-website.png"),
+    imgUrl: require("@/assets/images/retail-website.webp"),
     name: "Retail Website",
     link: "https://datozhgenti.github.io/Acme-Shop-Website/",
   },
   {
-    imgUrl: require("@/assets/images/fitnesso-website.png"),
+    imgUrl: require("@/assets/images/fitnesso-website.webp"),
     name: "Fitnesso Website",
     link: "https://datozhgenti.github.io/fitnesso/",
   },
   {
-    imgUrl: require("@/assets/images/finsweet-website.png"),
+    imgUrl: require("@/assets/images/finsweet-website.webp"),
     name: "Finsweet Website",
     link: "https://datozhgenti.github.io/finsweet_vue/",
   },
   {
-    imgUrl: require("@/assets/images/environment-website.png"),
+    imgUrl: require("@/assets/images/environment-website.webp"),
     name: "Environment Website",
     link: "https://datozhgenti.github.io/environment_website/",
   },

@@ -4,9 +4,11 @@
     <starterView v-if="useStore().starterViewOn"></starterView>
   </transition>
   <mainView v-if="!useStore().starterViewOn"></mainView>
+  <!-- <mainView></mainView> -->
 </template>
 
 <script setup>
+/* eslint-disable */
 import starterView from "./views/starterView.vue";
 import mainView from "./views/mainView.vue";
 import pagePreloaderVue from "./views/pagePreloader.vue";
@@ -66,16 +68,19 @@ html {
 @font-face {
   font-family: DMsans-regular;
   src: url("@/assets/fonts/DMSans-Regular.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: DMsans-medium;
   src: url("@/assets/fonts/DMSans-Medium.ttf");
+  font-display: swap;
 }
 
 @font-face {
   font-family: DMsans-bold;
   src: url("@/assets/fonts/DMSans-Bold.ttf");
+  font-display: swap;
 }
 
 /* font family classes */

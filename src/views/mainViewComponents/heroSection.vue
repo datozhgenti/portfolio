@@ -28,7 +28,7 @@
       ></div>
       <div class="image-wrapper">
         <img
-          src="@/assets/images/me.jpg"
+          src="@/assets/images/me.webp"
           alt="picture of man"
           class="block border-radius-50"
         />

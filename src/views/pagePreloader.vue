@@ -25,8 +25,6 @@ export default {
 
 <style scoped>
 .preloader {
-  width: 100vw;
-  height: 100vh;
   background: var(--page-background);
   z-index: 3000;
   inset: 0;
